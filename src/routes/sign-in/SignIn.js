@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import React,{ useEffect } from 'react'
-import { signInWithGooglePopup , signInWithGoogleRedirect, auth } from '../../../utils/firebase/firebase'
-import { createUserDocumentFromAuth } from '../../../utils/firebase/firebase'
+import { signInWithGooglePopup , signInWithGoogleRedirect, auth } from '../../utils/firebase/firebase'
+import { createUserDocumentFromAuth } from '../../utils/firebase/firebase'
 import SignUp  from './SignUp'
 import { getRedirectResult } from 'firebase/auth'
 
