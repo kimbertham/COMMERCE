@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Category from './components/catergories/Category'
 import Nav from './routes/nav/Nav'
-import Authentication from './routes/sign-in/Authentication'
+import Authentication from './routes/auth/Authentication'
 
 const App = () => {
 
