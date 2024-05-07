@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUpForm from '../../components/sign-up-form/SignInForm'
+import SignUpForm from '../../components/sign-up-form/SignUpForm'
 import SignInForm from '../../components/sign-in-form /SignInForm'
 import './authentication.scss'
 

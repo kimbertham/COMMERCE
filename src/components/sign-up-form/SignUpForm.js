@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { createEmailPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase'
 import InputForm from '../input-form/InputForm'
 import Button from '../button/button'
-import './sign-in.scss'
+import './sign-up.scss'
+import { UserContext } from '../../contexts/user'
 
 
 const defaultFormFields = {
@@ -14,6 +15,7 @@ const defaultFormFields = {
 
 const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
+  const { setCurrentUser } = useContext(UserContext)
 
   const handleChange = (e) => {
     setFormFields({ ...formFields, [e.target.name]: e.target.value })
@@ -26,6 +28,7 @@ const SignUp = () => {
     }
     try {
       const { user } = await createEmailPassword(formFields.email, formFields.password)
+      setCurrentUser(user)
       await createUserDocumentFromAuth(user, { displayName: formFields.name })
     } catch (err){
       console.log('user created error', err)
